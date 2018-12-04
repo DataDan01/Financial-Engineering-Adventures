@@ -236,7 +236,7 @@ Inputs:
 Output:
 	B = bond price
 """
-function PriceDurConv(;coupon::Float64, yield::Float64, time::Float64, freq::Float64) where T <:Float64
+function PriceDurConv(;coupon::Float64, yield::Float64, time::Float64, freq::Float64) where T <:Dict{String,Float64}
 
 	# Setting up cashflow vector
 	cashflows = fill(coupon/freq, convert(Int64,ceil(time*freq)))
